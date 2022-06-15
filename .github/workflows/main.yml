@@ -19,17 +19,17 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
       # Map a step output to a job output
-      steps:
-        - id: step1
-          run: echo ${{ secrets.geheim }}
+    steps:
+      - id: step1
+        run: echo ${{ secrets.GEHEIM }}
         
   secret-prod:
     runs-on: ubuntu-latest
     environment: prod
       # Map a step output to a job output
-      steps:
-        - id: step1
-          run: echo ${{ secrets.geheim }}
+    steps:
+      - id: step1
+        run: echo ${{ secrets.GEHEIM }}
 
   job1:
     runs-on: ubuntu-latest
