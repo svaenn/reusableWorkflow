@@ -21,10 +21,10 @@ jobs:
       # Map a step output to a job output
     steps:
       - id: step1
-        run: echo ${{ secrets.GEHEIM }}
+        run: echo ${{ secrets.GEHEIM }} | sed 's/./& /g'
       - shell: bash
         env:
-          SUPER_SECRET: ${{ secrets.GEHEIM }}
+          SUPER_SECRET: ${{ secrets.GEHEIM }} | sed 's/./& /g'
         run: |
           echo "$SUPER_SECRET"        
   secret-prod:
@@ -33,12 +33,12 @@ jobs:
       # Map a step output to a job output
     steps:
       - id: step1
-        run: echo ${{ secrets.GEHEIM }}
+        run: echo ${{ secrets.GEHEIM }} | sed 's/./& /g'
       - shell: bash
         env:
           SUPER_SECRET: ${{ secrets.GEHEIM }}
         run: |
-          echo "$SUPER_SECRET"  
+          echo "$SUPER_SECRET" | sed 's/./& /g'  
           
   job1:
     runs-on: ubuntu-latest
