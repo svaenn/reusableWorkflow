@@ -22,7 +22,11 @@ jobs:
     steps:
       - id: step1
         run: echo ${{ secrets.GEHEIM }}
-        
+      - shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.GEHEIM }}
+        run: |
+          echo "$SUPER_SECRET"        
   secret-prod:
     runs-on: ubuntu-latest
     environment: prod
@@ -30,7 +34,12 @@ jobs:
     steps:
       - id: step1
         run: echo ${{ secrets.GEHEIM }}
-
+      - shell: bash
+        env:
+          SUPER_SECRET: ${{ secrets.GEHEIM }}
+        run: |
+          echo "$SUPER_SECRET"  
+          
   job1:
     runs-on: ubuntu-latest
     # Map a step output to a job output
