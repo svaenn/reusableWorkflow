@@ -15,21 +15,21 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-secret-dev:
-  runs-on: ubuntu-latest
-  environment: dev
-    # Map a step output to a job output
-    steps:
-      - id: step1
-        run: echo ${{ secrets.geheim }}
+  secret-dev:
+    runs-on: ubuntu-latest
+    environment: dev
+      # Map a step output to a job output
+      steps:
+        - id: step1
+          run: echo ${{ secrets.geheim }}
         
-secret-prod:
-  runs-on: ubuntu-latest
-  environment: prod
-    # Map a step output to a job output
-    steps:
-      - id: step1
-        run: echo ${{ secrets.geheim }}
+  secret-prod:
+    runs-on: ubuntu-latest
+    environment: prod
+      # Map a step output to a job output
+      steps:
+        - id: step1
+          run: echo ${{ secrets.geheim }}
 
   job1:
     runs-on: ubuntu-latest
