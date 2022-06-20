@@ -16,11 +16,9 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   secret-dev-reused:
-    runs-on: ubuntu-latest
-    environment: dev
     uses: ./.github/workflows/reuse-environment-secret.yml
-      secrets:
-         GEHEIM-REUSED: ${{ secrets.GEHEIM }}
+    secrets:
+       GEHEIM-REUSED: testsecret
   secret-dev:
     runs-on: ubuntu-latest
     environment: dev
