@@ -18,9 +18,8 @@ jobs:
   secret-dev-reused:
     runs-on: ubuntu-latest
     environment: dev
-    steps:
-      - uses: ./.github/workflows/reuse-environment-secret.yml
-        with:
+    uses: ./.github/workflows/reuse-environment-secret.yml
+      secrets:
          GEHEIM-REUSED: ${{ secrets.GEHEIM }}
   secret-dev:
     runs-on: ubuntu-latest
